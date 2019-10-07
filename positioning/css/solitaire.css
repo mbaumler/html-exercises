@@ -1,0 +1,12 @@
+/*solitaire.css*/
+body {
+    background-image: url("images/gradient.jpg");
+    background-repeat: no-repeat;
+}
+
+.greentexture {
+    width: 150px;
+    height: 150px;
+    background-image: url("images/felt2.jpg");
+    position: relative;
+}
