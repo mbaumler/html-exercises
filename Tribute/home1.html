@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Michelle Obama</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <style>
+        /*!* Dropdown Button *!*/
+        /*.dropbtn {*/
+        /*    background-color: #935c6b;*/
+        /*    color: white;*/
+        /*    padding: 16px;*/
+        /*    font-size: 16px;*/
+        /*    font-family: "Josefin Sans", sans-serif;*/
+        /*    border: none;*/
+        /*    position: absolute;*/
+        /*    left: 150px;*/
+        /*    bottom: 105px;*/
+        /*}*/
+
+        /*!* The container <div> - needed to position the dropdown content *!*/
+        /*.dropdown {*/
+        /*    position: relative;*/
+        /*    display: inline-block;*/
+        /*}*/
+
+        /*!* Dropdown Content (Hidden by Default) *!*/
+        /*.dropdown-content {*/
+        /*    display: none;*/
+        /*    position: absolute;*/
+        /*    left: 150px;*/
+        /*    bottom: -15px;*/
+        /*    background-color: #f1f1f1;*/
+        /*    min-width: 160px;*/
+        /*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+        /*    z-index: 1;*/
+        /*}*/
+
+        /*!* Links inside the dropdown *!*/
+        /*.dropdown-content a {*/
+        /*    color: black;*/
+        /*    padding: 12px 16px;*/
+        /*    text-decoration: none;*/
+        /*    font-family: "Josefin Sans", sans-serif;*/
+        /*    display: block;*/
+        /*}*/
+
+        /*!* Change color of dropdown links on hover *!*/
+        /*.dropdown-content a:hover {background-color: #ddd;}*/
+
+        /*!* Show the dropdown menu on hover *!*/
+        /*.dropdown:hover .dropdown-content {display: block;}*/
+
+        /*!* Change the background color of the dropdown button when the dropdown content is shown *!*/
+        /*.dropdown:hover .dropbtn {background-color: #935c6b;}*/
+
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            bottom: 40px;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: lightgray;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: indianred;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 25px;
+            left: 50px;
+        }
+
+        .wrapper {
+            width: 1180px;
+            height: 4000px;
+            background-color: white;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        nav {
+            width: 1160px;
+            height: 100px;
+            background-color: white;
+            color: darkgray;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #section-1, #section-3 {
+            width: 1180px;
+            height: 800px;
+            background-color: #935c6b;
+            color: white;
+            margin: 0 auto;
+        }
+
+        #section-2, #section-4 {
+            width: 1180px;
+            height: 800px;
+            background-color: white;
+            color: #935c6b;
+            margin: 0 auto;
+        }
+
+        h3 {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            font-size: 60px;
+            opacity: 24%;
+            color: #935c6b;
+            position: absolute;
+            left: -300px;
+            top: 400px;
+            transform: rotate(270deg);
+        }
+
+        p#nav-section-1, p#nav-section-2, p#nav-section-3, p#nav-section-4 {
+            display: inline;
+            font-size: 24px;
+            font-family: "Josefin Sans", Arial, sans-serif;
+            padding: 0 25px;
+            color: #935c6b;
+            line-height: 100px;
+        }
+
+        .back {
+            position: absolute;
+            font-family: "Josefin Sans", Arial, sans-serif;
+            color: #935c6b;
+            bottom: 25px;
+            left: 50px;
+        }
+
+        .quote {
+            float: left;
+            position: relative;
+            left: 40px;
+        }
+
+        .advocacy {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            font-size: 60px;
+            opacity: 24%;
+            color: #935c6b;
+            position: absolute;
+            left: -200px;
+            top: 1200px;
+            transform: rotate(270deg);
+        }
+
+        .legacy {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            font-size: 60px;
+            opacity: 24%;
+            color: #935c6b;
+            position: absolute;
+            left: -150px;
+            top: 2050px;
+            transform: rotate(270deg);
+        }
+
+        .advocacyimages {
+            width: 1500px;
+            display: inline;
+            align-content: center;
+            padding-left: 10px;
+        }
+
+        .section1 {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            color: white;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            line-height: 25px;
+        }
+
+        .section3 {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            color: white;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            line-height: 25px;
+        }
+
+        .section4 {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            color: white;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            line-height: 25px;
+        }
+
+        .section2 {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            font-size: 20px;
+            padding-top: 5px;
+            padding-left: 25px;
+            padding-right: 25px;
+            line-height: 25px;
+        }
+
+        .social1 {
+            float: right;
+            position: relative;
+            bottom: 380px;
+            right: 250px;
+        }
+
+        .social2 {
+            float: right;
+            position: relative;
+            bottom: 380px;
+            right: 150px;
+        }
+
+        .social3 {
+            float: right;
+            position: relative;
+            bottom: 380px;
+            right: 50px;
+        }
+
+        .learn {
+            float: right;
+            position: relative;
+            font-size: 18px;
+            font-family: "Josefin Sans", Arial, sans-serif;
+            color: #935c6b;
+            bottom: 275px;
+            left: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .aboutimages {
+            display: inline;
+            position: relative;
+            left: 30px;
+        }
+
+        .footer {
+            background-color: #935c6b;
+            font-family: "Josefin Sans", Arial, sans-serif;
+            text-align: center;
+            padding-top: 65px;
+            color: white;
+            /*position: absolute;*/
+            bottom: 0px;
+            width: 1180px;
+            height: 100px;
+            line-height: 25px;
+        }
+
+        .becoming {
+            font-family: "Josefin Sans", Arial, sans-serif;
+            font-size: 60px;
+            opacity: 24%;
+            color: #935c6b;
+            position: absolute;
+            left: -200px;
+            top: 3000px;
+            transform: rotate(270deg);
+        }
+        .footerlogo {
+            position: absolute;
+            bottom: 75px;
+            left: 550px;
+        }
+
+        .video {
+            position: relative;
+            left: 300px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        .bookcover {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .amazon {
+            float: left;
+            position: relative;
+            left: 80px;
+            bottom: 200px;
+        }
+        .bb {
+            float: left;
+            position: relative;
+            right: 150px;
+            bottom: 150px;
+        }
+
+    </style>
+</head>
+<div class="logo">
+    <img src="img/mologo2.png" width="400">
+</div>
+<div class="container">
+    <img class="quote" src="img/quote.png" width="300">
+    <!--        <div class="dropdown">-->
+    <!--            <button class="dropbtn">Menu</button>-->
+    <!--            <div class="dropdown-content">-->
+    <!--                <a href="#">About Michelle</a>-->
+    <!--                <a href="#">Her Involvement</a>-->
+    <!--                <a href="#">Becoming</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!-- Slideshow container -->
+    <!--    <blockquote class="twitter-tweet" data-width="300"><p lang="en" dir="ltr">From our family to yours, <a-->
+    <!--            href="https://twitter.com/hashtag/HappyThanksgiving?src=hash&amp;ref_src=twsrc%5Etfw">#HappyThanksgiving</a>!-->
+    <!--        <a href="https://t.co/PBDBaUo1Fy">pic.twitter.com/PBDBaUo1Fy</a></p>&mdash; Michelle Obama (@MichelleObama) <a-->
+    <!--            href="https://twitter.com/MichelleObama/status/1199819055533871107?ref_src=twsrc%5Etfw">November 27,-->
+    <!--        2019</a></blockquote>-->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <img src="img/michelle1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/michelle2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="img/michelle3.jpg" style="width:100%">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div>
+        <a href="https://twitter.com/MichelleObama?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+            <img class="social1" src="img/twitter(1).png" width="37"></a>
+        <a href="https://www.instagram.com/michelleobama/?hl=en">
+            <img class="social2" src="img/instagram(2).png" width="37"></a>
+        <a href="https://www.facebook.com/michelleobama/">
+            <img class="social3" src="img/facebook(3).png" width="37"></a>
+    </div>
+    <div class="learn">
+        <a href="https://www.obama.org/">Learn more about what the Obama's are up to.<br>
+            <p>Obama.org</p></a>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div id="top"></div>
+    <nav>
+        <a href="#section-1"><p id="nav-section-1">ABOUT MICHELLE</p></a>
+        <a href="#section-2"><p id="nav-section-2">ADVOCACY</p></a>
+        <a href="#section-3"><p id="nav-section-3">LEGACY</p></a>
+        <a href="#section-4"><p id="nav-section-4">BECOMING</p></a>
+    </nav>
+    <section id="section-1" class="section1">
+        <h3>ABOUT MICHELLE</h3>
+        <p>Michelle Obama is a lawyer and writer who was the First Lady of the United States from 2009 to 2017. She is
+            the wife of the 44th U.S. president, Barack Obama. As first lady, Michelle focused her attention on social
+            issues such as poverty, healthy living and education. Her 2018 memoir, Becoming, discusses the experiences
+            that shaped her, from her childhood in Chicago to her years living in the White House.</p>
+        <p>Michelle was born Michelle LaVaughn Robinson on January 17, 1964, in Chicago, Illinois. Michelle's father,
+            Fraser Robinson, was a city-pump operator and a Democratic precinct captain. Her mother, Marian, was a
+            secretary at Spiegel's but later stayed home to raise Michelle and her older brother, Craig. At just 21
+            months apart in age, Craig and Michelle a were often mistaken for twins.
+            The Robinson family lived in a small bungalow on Chicago's South Side. Michelle and Craig shared quarters,
+            sleeping in the living room with a sheet serving as a makeshift room divider. They were a close-knit family,
+            typically sharing meals, reading and playing games together.</p>
+        <p>Raised with an emphasis on education, both Michelle and her brother learned to read at home by age four. Both
+            skipped the second grade. By the sixth grade, Michelle was taking classes in her school's gifted program,
+            where she learned French and completed accelerated courses in biology.
+            Michelle went on to attend Whitney M. Young Magnet High School, the city's first magnet high school for
+            gifted children, where, among other activities, she served as the student government treasurer. In 1981, she
+            graduated from the school as class salutatorian.</p>
+        <p><a href="https://www.biography.com/us-first-lady/michelle-obamaa">Source: Biography.com</a></p>
+        <div class="aboutimages">
+            <img src="img/young.jpg">
+            <img src="img/young2.jpg">
+            <img src="img/young3.jpg">
+        </div>
+
+    </section>
+    <section id="section-2" class="section2">
+        <h3 class="advocacy">ADVOCACY</h3>
+        <p>In 2010, she launched Let’s Move!, bringing together community leaders, educators, medical professionals,
+            parents, and others in a nationwide effort to address the challenge of childhood obesity. Let’s Move! has an
+            ambitious goal: to solve the epidemic of childhood obesity within a generation. Whether it's providing
+            healthier food in our schools, helping kids be more physically active, or urging companies to market
+            healthier foods to our children, Let’s Move! is focused on giving parents the support they need to make
+            healthier choices for their kids.</p>
+        <p>In 2011, Mrs. Obama and Dr. Jill Biden came together to launch Joining Forces, a nationwide initiative
+            calling all Americans to rally around service members, veterans, and their families and support them through
+            wellness, education, and employment opportunities. Joining Forces works hand in hand with the public and
+            private sector to ensure that service members, veterans, and their families have the tools they need to
+            succeed throughout their lives.</p>
+        <p>In 2014, Mrs. Obama launched the Reach Higher Initiative, an effort to inspire young people across America to
+            take charge of their future by completing their education past high school, whether at a professional
+            training program, a community college, or a four-year college or university. Reach Higher aims to ensure
+            that all students understand what they need to complete their education by working to expose students to
+            college and career opportunities; helping them understand financial aid eligibility; encouraging academic
+            planning and summer learning opportunities; and supporting high school counselors who do essential work to
+            help students get into college.</p>
+        <p>In 2015, Mrs. Obama joined President Obama to launch Let Girls Learn, a U.S. government-wide initiative to
+            help girls around the world go to school and stay in school. As part of this effort, Mrs. Obama is calling
+            on countries across the globe to help educate and empower young women, and she is sharing the stories and
+            struggles of these young women with young people here at home to inspire them to commit to their own
+            education.</p>
+        <p><a href="https://obamawhitehouse.archives.gov/administration/first-lady-michelle-obama">Source: From the
+            Obama White House Archives</a></p>
+        <div class="advocacyimages">
+            <img src="img/letgirlslearn.jpg">
+            <img src="img/letsmove.jpg">
+            <img src="img/forces.jpg">
+            <img src="img/letsmove2.jpg">
+        </div>
+    </section>
+    <section id="section-3" class="section3">
+        <h3 class="legacy">LEGACY</h3>
+        <p>Jimmy Fallon did a tribute to Michelle Obama the other day in which people were supposed to stand in front of
+            a
+            photograph of the First Lady and record a message for her to view at a later date. Not surprisingly, Mrs.
+            Obama and Mr. Fallon were listening behind a curtain, and then came out to greet each of
+            the participants after they delivered their heartfelt messages. Mrs. Obama gave every one of these people
+            the
+            warmest hug. There were tears galore. One of the people speaking made the observation that the thread
+            running through all of Mrs. Obama’s speeches was
+            kindness, and that this is the one value he most wants to teach his own children. Interestingly, when I
+            think about the past eight years with Michelle Obama as First Lady, kindness is exactly
+            the word that comes to mind.</p>
+        <p>This was a First Lady who, above all, cared about the people in her country – all of the people. Although
+            extremely fashionable, Mrs. Obama was far less interested in wearing couture than in helping her fellow
+            Americans to live their very best lives and to be the very best that they could be. Both Michelle and Barack
+            Obama have tremendous integrity, compassion and authenticity. It’s obvious to everyone
+            that Mrs. Obama’s Let’s Move initiative to get people exercising and eating healthy sprang from a sincere
+            concern for the welfare of the people of the United States of America. Every speech she made, every
+            initiative in support of education, for example Let Girls Learn, and every bit of
+            work she did with Joining Forces to raise awareness and money for US veterans demonstrated to us all that
+            Mrs.
+            Obama was motivated by a deep and abiding empathy for her fellow Americans and her fellow human beings. As a
+            mother of two young girls, Michelle Obama exemplified loving-kindness and a deep concern for their welfare.
+            In rejecting the idea of running for president herself, Mrs. Obama put the needs of her daughters first and
+            foremost, not wanting them to have to deal with the stresses of being the daughters of the president, all
+            over
+            again.
+        <p>Michelle Obama never used her position to lord it over others. She was more humble than haughty, more elegant
+            than arrogant, more serene than snobbish, and inclusive rather than exclusive. She always wanted to include
+            the
+            American people in the important conversations.
+            She inspired Americans to be more caring and respectful toward one-another, as she never treated anyone with
+            less than the utmost respect. For that reason, she won the love, respect and admiration of her fellow
+            Americans.
+            Many First Ladies are respected and admired, it’s true, but few were as deeply loved as Mrs. Obama has been.
+            In the coming months and years, we should remember Michelle Obama’s legacy of kindness and not allow the
+            negativity, divisiveness and cynicism of the incoming administration to make us forget that love should
+            always be our guiding principle, and kindness should always be our first choice.</p>
+        <p><a class="link" href="https://marciasirotamd.com/blog/michelle-obamas-legacy-kindness">Source: An excerpt
+            from Dr. Marcia
+            Sirota</a></p>
+    </section>
+
+
+    <section id="section-4" class="section4">
+        <h3 class="becoming">BECOMING</h3>
+        <p>Becoming is the memoir of former United States first lady Michelle Obama published in 2018. Described by
+            the author as a deeply personal experience, the book talks about her roots and how she found her voice, as
+            well as her time in the White House, her public health campaign, and her role as a mother. The book is
+            published by Crown and will be released in 24 languages. One million copies will be donated to First Book,
+            an
+            American nonprofit organization which provides books to children. It sold more copies than any other book
+            published in the United States in 2018, breaking the record in just 15 days. (From Wikipedia)</p>
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yqcevP1eAbE" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+        <p>In a life filled with meaning and accomplishment, Michelle Obama has emerged as one of the most iconic and
+            compelling women of our era. As First Lady of the United States of America—the first African American to
+            serve in that role—she helped create the most welcoming and inclusive White House in history, while also
+            establishing herself as a powerful advocate for women and girls in the U.S. and around the world,
+            dramatically changing the ways that families pursue healthier and more active lives, and standing with her
+            husband as he led America through some of its most harrowing moments. Along the way, she showed us a few
+            dance moves, crushed Carpool Karaoke, and raised two down-to-earth daughters under an unforgiving media
+            glare.</p>
+        <p>In her memoir, a work of deep reflection and mesmerizing storytelling, Michelle Obama invites readers into
+            her world, chronicling the experiences that have shaped her—from her childhood on the South Side of Chicago
+            to her years as an executive balancing the demands of motherhood and work, to her time spent at the world’s
+            most famous address. With unerring honesty and lively wit, she describes her triumphs and her
+            disappointments, both public and private, telling her full story as she has lived it—in her own words and on
+            her own terms. Warm, wise, and revelatory, Becoming is the deeply personal reckoning of a woman of soul and
+            substance who has steadily defied expectations—and whose story inspires us to do the same. (From Goodreads)</p>
+        <img src="img/becoming.jpg" class="bookcover">
+        <div>
+            <a href="https://www.amazon.com/Becoming-Michelle-Obama/dp/1524763136">
+                <img src="img/amazon.png" class="amazon" height="150"></a>
+            <a href="https://www.barnesandnoble.com/w/becoming-michelle-obama/1128038172?ean=9781524763138#/">
+                <img src="img/bb.png" class="bb" height="150"></a>
+        </div>
+    </section>
+    <a href="#top"><p class="back">BACK TO TOP</p></a>
+    <footer class="footer">
+        <img class="footerlogo" src="img/footerlogo.png" width="100">
+        <p>Website designed by Meghan Baumler.<br>GDES 2342, Fall 2019.</p>
+    </footer>
+</div>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // function showSlides(n) {
+    //     var i;
+    //     var slides = document.getElementsByClassName("mySlides");
+    //     var dots = document.getElementsByClassName("dot");
+    //     if (n > slides.length) {slideIndex = 1}
+    //     if (n < 1) {slideIndex = slides.length}
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     for (i = 0; i < dots.length; i++) {
+    //         dots[i].className = dots[i].className.replace(" active", "");
+    //     }
+    //     slides[slideIndex-1].style.display = "block";
+    //     dots[slideIndex-1].className += " active";
+    // }
+
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    $(document).ready(function () {
+// Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+
+// Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+// Prevent default anchor click behavior
+                event.preventDefault();
+
+// Store hash
+                var hash = this.hash;
+
+// Using jQuery's animate() method to add smooth page scroll
+// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+
+// Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+</body>
+</html>
